@@ -86,7 +86,14 @@ app.get('/logout', function(req, res){
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/final_project_attempt_5");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/final_project_attempt_5",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // Start the API server
 app.listen(PORT, function() {
