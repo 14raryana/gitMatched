@@ -1,0 +1,164 @@
+.login-modal-container{
+  overflow: hidden;
+}
+
+.login-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    min-height: 4320px;
+    background: url(../../assets/modalOverlayImage1.jpg) repeat;
+    background-repeat: repeat;
+    animation: slide 60s linear infinite;
+    opacity: 10%;
+  }
+  
+  .login-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+  
+  .login-modal {
+    background: linear-gradient(rgb(85, 79, 71),rgb(36, 35, 34));
+    z-index: 100;
+    position: relative;
+    top: 11%;
+    margin: auto;
+    border-radius: 3px;
+    padding-top: 15px;
+    min-width: 30%;
+    max-width: 1200px;
+    box-shadow: 0 0 4px 2px rgba(36, 36, 36, 0.541);
+    min-height: 575px;
+  }
+  
+  .login-logo-div{
+    background-size: "75px";
+    height: "75px"; 
+    width: "75px";
+    margin-right: 80%;
+    }
+
+  .login-modal-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  button {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: .3rem 0.8rem;
+    margin-left: .5rem;
+  }
+  
+  .button-login {
+    outline: none;
+    float: right;
+    border-radius: 8px;
+    border: none;
+    background: radial-gradient(#16aaff,rgb(117, 214, 255));
+    box-shadow:4px 0 .2em rgba(0, 31, 41, 0.466), -4px 0 .2em rgba(0, 31, 41, 0.466);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .button-login:hover {
+    cursor: pointer;
+    background: radial-gradient(#00a2ff,rgb(81, 203, 255));
+    color: rgb(203, 255, 207);
+    box-shadow:inset 0 0 4px 2px rgba(36, 36, 36, 0.541);
+  }
+  .button-login:active {
+    cursor: pointer;
+    background: radial-gradient(#0070b1,rgb(61, 197, 255));
+    color: rgb(100, 255, 113);
+    box-shadow:inset 0 0 4px 4px rgba(36, 36, 36, 0.541);
+  }
+
+  .login-modal-close-button{
+    outline: none;
+    color: white;
+    margin-right: 20px;
+    background-color: rgb(85, 79, 71);
+    border: solid;
+    border-width: 3px;
+    border-color: white;
+  }
+
+  .login-modal-close-button:hover{
+    border-color: rgb(255, 221, 221);
+    color: rgb(255, 221, 221);
+    background-color: rgb(83, 73, 60);
+    box-shadow:inset 0 0 4px 2px rgba(36, 36, 36, 0.541);
+  }
+  .login-modal-close-button:active{
+    border-color: Red;
+    color: Red;
+    background-color: rgb(82, 67, 47);
+    box-shadow:inset 0 0 4px 2px rgba(36, 36, 36, 0.541);
+  }
+
+  .login-modal-card{
+    margin: auto!important;
+    min-width: 100%;
+  }
+
+  @keyframes slide{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(0, -1440px, 0);
+    }
+  }
+
+  @media screen and (min-width: 1201px) {
+    .button-login {
+      font-size: 35px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .button-login {
+      font-size: 30px;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-top: 12.5px;
+      padding-bottom: 12.5px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .button-login {
+      font-size: 25px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .button-login {
+      font-size: 20px;
+      padding-right: 17px;
+      padding-left: 17px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }

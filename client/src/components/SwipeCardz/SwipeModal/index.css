@@ -1,0 +1,93 @@
+.modal-overlay {
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/modalOverlayImage1.jpg);
+    background-size: 200em;
+    /* background-color: rgb(81, 118, 167); */
+    opacity: 15%;
+  }
+  
+  .modal-wrapper {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+  
+  .modal {
+    
+    background: linear-gradient(rgb(138, 138, 138), rgb(78, 78, 78));
+    z-index: 100;
+    position: relative;
+    margin: 14rem auto;
+    border-radius: 3px;
+    max-width: 500px;
+    padding: 2rem;
+  }
+  
+  
+
+  .modal-header {
+    
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  button {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: .3rem 0.8rem;
+    margin-left: .5rem;
+  }
+  
+  .swipe-button {
+    outline: none;
+    margin: 46%;
+    border-radius: 8px;
+    margin-right: 30px;
+    margin-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: radial-gradient(#2eb2ff,rgb(159, 226, 255));
+    box-shadow:4px 0 .2em rgba(0, 31, 41, 0.466), -4px 0 .2em rgba(0, 31, 41, 0.466);
+    color: #fff;
+  }
+
+  .modal-close-button{
+    outline: none;
+    color: white;
+    background-color: rgb(143, 143, 143);
+    border: solid;
+    border-width: 3px;
+    border-color: white;
+  }
+
+  .modal-close-button:hover{
+    border-color: rgb(255, 221, 221);
+    color: rgb(255, 221, 221);
+    background-color: rgb(109, 109, 109);
+    box-shadow:inset 0 0 4px 2px rgba(36, 36, 36, 0.541);
+  }
+  .modal-close-button:active{
+    border-color: Red;
+    color: Red;
+    background-color: rgb(97, 97, 97);
+    box-shadow:inset 0 0 4px 2px rgba(36, 36, 36, 0.541);
+  }
+
+  .modal-card{
+    margin: auto!important;
+  }

@@ -1,0 +1,85 @@
+.dm-header{
+    background: transparent;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    
+}
+
+.header-title{
+    width: 100%!important;
+    height: 100%!important;
+    margin-top: 5px!important;
+    padding-top: 0!important;
+}
+
+.dm-git{
+    font-family: 'Abel', sans-serif;
+    text-shadow: 4px 0 .2em #00000077, -4px 0 .2em #00000077;
+    font-weight: bold;
+    text-align: left;
+    margin: 0;
+    color: #ffbd4a;
+    display: inline;
+    
+    width: 100%!important;
+    height: 100%!important;
+}
+.dm-matched{
+    font-family: 'Abel', sans-serif;
+    margin: 0;
+    text-shadow: 4px 0 .2em #00000077, -4px 0 .2em #00000077;
+    font-weight: bold;
+    text-align: right;
+    color: #99e265;
+    display: inline;
+    width: 100%!important;
+    height: 100%!important;
+}
+.h2{
+    width: 100%!important;
+    height: 100%!important;
+    margin: auto!important;
+}
+
+@media screen and (min-width: 1201px) {
+    .dm-git {
+        font-size: 60px!important;
+    }
+    .dm-matched {
+        font-size: 60px!important;
+    }
+  }
+  .header-title{
+    width: 100%!important;
+    height: 100%!important;
+    margin-top: 5px!important;
+    padding-top: 0!important;
+}
+
+@media screen and (max-width: 1200px) {
+    .dm-git {
+        font-size: 50px!important;
+    }
+    .dm-matched {
+        font-size: 50px!important;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .dm-git {
+        font-size: 40px!important;
+    }
+    .dm-matched {
+        font-size: 40px!important;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .dm-git {
+        font-size: 30px!important;
+    }
+    .dm-matched {
+        font-size: 30px!important;
+    }
+  }

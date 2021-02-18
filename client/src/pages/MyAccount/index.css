@@ -1,0 +1,99 @@
+.bio-card{
+    margin-top: 30px;
+}
+
+.bio-name {
+    box-shadow: 0px 9px 25px 0px #2eb2ff!important;
+    border-radius: 15px!important;
+}
+
+.my-account-height{
+    height: 96vh;
+    background: white;
+}
+
+#firstName{
+    min-width: 10%;
+    /* background-color: rgb(235, 235, 235); */
+}
+#lastName{
+    min-width: 10%;
+    /* background-color: rgb(235, 235, 235); */
+}
+#city{
+    min-width: 30%;
+    /* background-color: rgb(235, 235, 235); */
+}
+#state{
+    min-width: 30%;
+    /* background-color: rgb(235, 235, 235); */
+}
+#JobTitle{
+    min-width: 10%;
+    /* background-color: rgb(235, 235, 235); */
+}
+#bio {
+    /* background-color: rgb(235, 235, 235); */
+    min-width: 30%;
+}
+
+#jobtitle {
+    /* background-color: rgb(235, 235, 235); */
+    margin: auto;
+    min-width: 30%;
+}
+
+#education {
+    /* background-color: rgb(235, 235, 235); */
+    min-width: 30%;
+}
+.profile-grid {
+    background-color: aliceblue;
+    max-height: 2000px;
+}
+/* .bio-text {
+    text-align: center;
+} */
+.bio-header {
+    background: linear-gradient(rgb(36, 35, 34),rgb(85, 79, 71));
+}
+
+.bio-bio {
+    box-shadow: 0px 9px 25px 0px #99e265!important;
+    border-radius: 15px!important;
+}
+
+
+.fa-save {
+    font-size: 24px;
+    color: #2eb2ff;
+}
+
+
+.padding-fix {
+    padding-bottom: 2rem!important;
+}
+
+.matches-list5 {
+    box-shadow: 0px 9px 25px 0px #ff5c5c!important;
+    border-radius: 15px!important;
+}
+
+.matches-list3 {
+    box-shadow: 0px 9px 25px 0px #ffbd4a!important;
+    border-radius: 15px!important;
+}
+
+.matches-list4 {
+    box-shadow: 0px 9px 25px 0px #2eb2ff!important;
+    border-radius: 15px!important;
+}
+
+.job-title-card{
+    text-align: center;
+}
+
+/* .mdl-card__supporting-text{
+    justify-content: center!important;
+    align-items: center!important;
+} */

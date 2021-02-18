@@ -1,0 +1,66 @@
+
+.nav-layout{
+    background-image: linear-gradient(to bottom right, rgb(85, 79, 71),rgb(36, 35, 34))!important;
+    /* height: 310px */
+    
+}
+.DM-span{
+    margin-top: 15px;
+}
+.logo-div{
+    float: left;
+    background-size: 250px;
+    background: no-repeat;
+}
+.logo-name{
+    margin-top: 12%;
+    float: right;
+    font-size: 55px;
+    min-height: 55px;
+    vertical-align: center;
+}
+
+#logo-git{
+    color: #ffbd4a;
+    font-weight: bold;
+    font-family: 'Abel', sans-serif;
+}
+
+#logo-matched{
+    color: #99e265;
+    font-family: 'Abel', sans-serif;
+}
+
+
+
+.header-container{
+    margin: auto;
+    min-width: 300px;
+    max-width: 500px;
+    margin-top: 0px;
+    min-height: 180px;
+}
+
+/* .home-nav{
+    position: absolute;
+    top: 0px;
+    right: 100px;
+}
+
+.match-nav{
+    position: absolute;
+    top: 0px;
+    right: 45px;
+}
+
+.profile-nav{
+    position: absolute;
+    top: 0px;
+    right: 30px;
+} */
+
+.sign-out{
+    position: absolute;
+    top: 0px;
+    right: 15px;
+}
