@@ -8,6 +8,7 @@ import {
 
 class CreateForm extends Component {
   // Setting the component's initial state
+
   constructor(props) {
     super(props);
     this.state = {
@@ -20,18 +21,11 @@ class CreateForm extends Component {
       bio: "",
       jobTitle: "",
       img: "",
-      email:"",
       toaccount: false,
       requiredPosition: "",
-      employer: false,
-      unRead: 0
+      employer: false
     }
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.createAccount = this.createAccount.bind(this);
   }
-
-
 
 
   handleInputChange = event => {
@@ -142,8 +136,7 @@ class CreateForm extends Component {
     const { match, location, history } = this.props;
     event.preventDefault();
     console.log(this.state)
-    console.log("HELLO THIS IS THE STATE");
-    // this.setState({unRead: this.unRead++});
+    console.log("HELLO THIS IS THE STATE")
     var user = this.state
     // console.log(user)
     API.createUser(user).then((response) => {
@@ -241,17 +234,6 @@ class CreateForm extends Component {
                   className="create-form-inputs" />
 
 
-              </Cell>
-            </Grid>
-
-            <Grid>
-              <Cell style={{margin: 'auto'}} col={6}>
-              <label>Email</label>
-                <input
-                  onChange={this.handleInputChange}
-                  type="text" name="email"
-                  value={this.state.email}
-                  className="create-form-inputs" />
               </Cell>
             </Grid>
             {/* <Grid className="switch-grid">

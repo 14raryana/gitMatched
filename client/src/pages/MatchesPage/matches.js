@@ -36,21 +36,12 @@ class Matches extends Component {
     render() {
         var visibility = "none";
 
-        // const test = async (event) => {
-        //     console.log(event.target.id);
-        // }
-
-        const email = async (event) => {
-            API.email(event.target.id)
-        }
-
         const viewed = async (event) => {
             // var updatedInfo = {
             //     viewed: true
             // }
             console.log(event.target.id)
             console.log(this.state.likedUsers)
-            API.view()
 
             this.state.likedUsers.map((user) => {
                 if(user.userName == event.target.id) {
@@ -108,7 +99,7 @@ class Matches extends Component {
                             </CardText>
                             <div className='email'>
                                 <Button style={{ marginLeft: 'auto', marginRight: 'auto', display: 'block' }} className='emailBtn'>
-                                    <i id={this.state.activeProfile.email} onClick={email} className="fa fa-envelope" aria-hidden="true" />
+                                    <i className="fa fa-envelope" aria-hidden="true" />
                                 </Button>
                             </div>
                         </Card>

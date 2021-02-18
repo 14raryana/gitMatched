@@ -6,7 +6,7 @@ function BioCard(props) {
     console.log(props);
     console.log("/components/BioCard/bio.js/line:7: props^^^");
     return (
-        <Card shadow={10} style={{ width: '100%', height: '75vh', margin: 'auto', textAlign: 'center' }}>
+        <Card shadow={10} style={{ width: '100%', height: '500px', margin: 'auto', textAlign: 'center' }}>
             <div>
                 <Card shadow={5} style={{ width: '30vw', height: '400px', margin: 'auto', marginTop: '50px' }} className="bio-bio">
                         <Grid>

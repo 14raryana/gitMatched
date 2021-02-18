@@ -10,10 +10,4 @@ router.route("/like")
 router.route("/dislike")
     .put(usersController.dislikeUser)
 
-router.route("/addUnread")
-    .put(usersController.addUnread)
-
-router.route("/view")
-    .put(usersController.view)
-
 module.exports = router;

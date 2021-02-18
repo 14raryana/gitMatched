@@ -70,24 +70,6 @@ export default {
         console.log(ids)
         console.log("THIS IS THE GET BY ID FUNCTION IN API.JS")
         return axios.get("/api/getuser/byId", { params: ids })
-    },
-
-    addUnread: function() {
-        console.log("THIS IS THE ADDUNREAD FUNCTION IN API.JS");
-        return axios.put("/api/updateUser/addUnread")
-    },
-
-    view: function() {
-        return axios.put("/api/updateUser/view")
-    },
-
-    email: function(email) {
-        // console.log("THIS IS THE EMAIL FUNCTION IN API.JS")
-        // console.log(email)
-        window.open(`mailto:${email}`)
-        // return axios.get("/api/email")
     }
-
-    // badgeNumber: function()
 
 }

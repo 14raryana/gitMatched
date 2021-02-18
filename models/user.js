@@ -71,11 +71,8 @@ const userSchema = new Schema({
   dislikedIds: {
     type: Array
   },
-  unRead: {
-    type: Number
-  },
-  email: {
-    type: String
+  viewed: {
+    type: Boolean
   }
 });
 

@@ -7,7 +7,6 @@ import { faEnvelope, faComment, faFile, faLinkedin } from '@fortawesome/free-sol
 import logo from "../../assets/dmlogo-vector.png";
 import API from "../../utils/API"
 import BioCard from "../../components/BioCard"
-import ReactTooltip from 'react-tooltip';
 
 class Home extends Component {
     state = {
@@ -41,8 +40,7 @@ class Home extends Component {
             likedIds: e.currentTarget.id
         }
 
-        API.like(userInfo)
-        .then((response) => {
+        API.like(userInfo).then((response) => {
             console.log(response)
             console.log("THIS IS THE RESPONSE IN HOME.JS AFTER LIKE FUNCTION")
             this.setState({
@@ -50,7 +48,6 @@ class Home extends Component {
             })
         })
 
-        // API.addUnread();
     }
 
     thumbsDown = (e) => {
@@ -66,6 +63,15 @@ class Home extends Component {
                 currentUser: response.data
             })
         })
+        
+        // .then((response) => {
+        //     console.log(response)
+        //     console.log("THIS IS THE RESPONSE IN HOME.JS AFTER LIKE FUNCTION")
+        //     this.setState({
+        //         currentUser: response.data
+        //     })
+        // })
+
     }
 
     render() {
@@ -118,16 +124,10 @@ class Home extends Component {
                 <Nav />
                 <div className="home-body-container">
                     <Grid className="git-swiping-header"><h2 style={{color: '#FF5C5C'}}>PASS</h2> <h2>OR</h2> <h2 style={{color: '#99e265'}}>MATCH</h2></Grid>
-                    <ReactTooltip id="thumbDownTip" place="top" effect="solid">
-                        Pass
-                    </ReactTooltip>
-                    <ReactTooltip id="thumbUpTip" place="top" effect="solid">
-                        Request Save
-                    </ReactTooltip>
                     <Grid className="home-body-grid">
 
                         {/* Thumbs Down Button */}
-                        <Cell col={2} style={{ maxWidth: '8vw',float:'left' }} ><FABButton data-tip data-for="thumbDownTip" onClick={this.thumbsDown} id={data.id} colored className="thumbsDown">
+                        <Cell col={2} style={{ maxWidth: '8vw',float:'left' }} ><FABButton onClick={this.thumbsDown} id={data.id} colored className="thumbsDown">
                             <i className="fa fa-thumbs-down fa-flip-horizontal" aria-hidden="true" rel="noopener noreferrer" />
                         </FABButton>
                         </Cell>
@@ -152,7 +152,7 @@ class Home extends Component {
                         </Cell>
 
                         {/* Thumbs up button */}
-                        <Cell col={2} style={{ maxWidth: '8vw', float:'right' }}><FABButton data-tip data-for="thumbUpTip" id={data.id} colored className="thumbsUp" onClick={this.thumbsUp}>
+                        <Cell col={2} style={{ maxWidth: '8vw', float:'right' }}><FABButton id={data.id} colored className="thumbsUp" onClick={this.thumbsUp}>
                             <i className="fa fa-thumbs-up" aria-hidden="true" rel="noopener noreferrer" />
                         </FABButton>
                         </Cell>

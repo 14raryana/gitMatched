@@ -66,9 +66,8 @@
 
 .fa-save {
     font-size: 24px;
-    color: #2eb2ff;
+    
 }
-
 
 .padding-fix {
     padding-bottom: 2rem!important;
@@ -92,8 +91,3 @@
 .job-title-card{
     text-align: center;
 }
-
-/* .mdl-card__supporting-text{
-    justify-content: center!important;
-    align-items: center!important;
-} */

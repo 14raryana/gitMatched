@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Card, CardActions, CardTitle, CardText, Button, Grid, Cell, IconButton } from 'react-mdl';
+import { Card, CardActions, CardTitle, CardText, Button, Grid, Cell } from 'react-mdl';
 import API from '../../utils/API';
 import "./index.css";
 import Nav from '../../components/Nav';
-import ImageButton from '../../components/ImageModal';
-import ReactTooltip from 'react-tooltip';
 
 
 class MyAccount extends Component {
@@ -41,16 +39,22 @@ class MyAccount extends Component {
     };
 
     editAccount = (event) => {
-        event.preventDefault();
-        if (event.target.id === "") return;
-        const fieldName = event.target.id;
-        const element = document.getElementById(fieldName);
-        const updateData = {
-            [fieldName]: element.textContent
+        console.log(event.target.value)
+        console.log("EVENT.TARGET")
+        // var formInputs = document.getElementsByClassName("formInputs");
+        // console.log(formInputs[0].id);
+        var updateValue = document.getElementById(event.target.value);
+        console.log(updateValue.textContent);
+        console.log("THIS IS THE VALUE VARIABLE; BASICALLY THE ID OF THE FIRSTNAME H1")
+        var key = event.target.value;
+        var updateValue;
+        console.log("THIS IS THE EVENT FROM THE EDIT ACCOUNT FUNCTION IN MYACCOUNT");
+        var updateCriteria = {
+            [key]: updateValue.textContent
         }
+        console.log(updateCriteria)
 
-
-        API.updateAccount(updateData).then((response) => {
+        API.updateAccount(updateCriteria).then((response) => {
             console.log("UPDATEACCOUNT WORKED, MYACCOUNT.JS");
             console.log(response);
         }).catch((err) => {
@@ -62,16 +66,13 @@ class MyAccount extends Component {
         return (
             <div>
                 <Nav />
-                <Grid className='profile-grid' style={{ minHeight: '75vh' }}>
-                    <ReactTooltip id="registerTip" place="top" effect="solid">
-                        Save
-                    </ReactTooltip>
+                <Grid className='profile-grid' style={{minHeight: '75vh'}}>
                     <Cell col={12}><h2>Edit Your Profile</h2></Cell>
                     <Cell col={4}>
                         <Card shadow={10} style={{ width: '30vw', height: '400px', margin: 'auto', borderRadius: '15px' }}>
-                            <ImageButton>
-                                {this.state.userName}
-                            </ImageButton>
+                            <CardTitle expand style={{ color: '#fff', height: '300px', position: 'relative',
+                             background: 'url(https://sabt.center/wp-content/uploads/2014/08/avatar-1-400x400.png) center / cover',
+                              backgroundRepeat: 'no-repeat' }}>{this.state.userName}</CardTitle>
                         </Card>
                         <br />
                         <br />
@@ -79,9 +80,9 @@ class MyAccount extends Component {
                             <CardTitle className='bio-header' style={{ color: '#99e265', height: '100px', position: 'relative', backgroundPosition: 'center', backgroundSize: 'cover' }}>BIOGRAPHY</CardTitle>
                             <CardText>
                                 <h6 id="bio" contentEditable="true" style={{ display: 'inline-block' }}>{this.state.bio}</h6>
-                                
-                                <Button value="bio"
-                                    data-tip data-for="registerTip" onClick={this.editAccount}><i id="bio" className="fa fa-save" aria-hidden="true" /></Button>
+                                {/* <hr/> */}
+                                <Button value="bio" 
+                                onClick={this.editAccount}><i className="fa fa-save" aria-hidden="true" /></Button>
 
                             </CardText>
 
@@ -92,11 +93,11 @@ class MyAccount extends Component {
                         <Card shadow={5} style={{ width: '30vw', height: '400px', margin: 'auto' }} className="bio-name">
                             <CardTitle className='bio-header' style={{ color: '#2eb2ff', height: '100px', position: 'relative', backgroundPosition: 'center', backgroundSize: 'cover' }}>NAME</CardTitle>
                             <CardText>
-                                <h2 id="firstName" style={{ display: "inline-block" }} contentEditable="true">{this.state.firstName}</h2><Button value="firstName" style={{ display: "inline" }}
-                                    data-tip data-for="registerTip" onClick={this.editAccount}><i id="firstName" className="fa fa-save" aria-hidden="true" /></Button><br />
+                                <h2 id="firstName" style={{ display: "inline-block" }} contentEditable="true">{this.state.firstName}</h2><Button value="firstName" style={{ display: "inline" }} 
+                                onClick={this.editAccount}><i className="fa fa-save" aria-hidden="true" /></Button><br />
+                                <h2 id="lastName" style={{ display: "inline-block" }} contentEditable="true">{this.state.lastName}</h2><Button value="lastName" 
+                                onClick={this.editAccount}><i className="fa fa-save" aria-hidden="true" /></Button><br />
 
-                                <h2 id="lastName" style={{ display: "inline-block" }} contentEditable="true">{this.state.lastName}</h2><Button value="lastName"
-                                    data-tip data-for="registerTip" onClick={this.editAccount}><i id="lastName" className="fa fa-save" aria-hidden="true" /></Button><br />
                             </CardText>
 
                         </Card>
@@ -106,9 +107,9 @@ class MyAccount extends Component {
                             <CardTitle className='bio-header' style={{ color: '#ff5c5c', height: '100px', position: 'relative', backgroundPosition: 'center', backgroundSize: 'cover' }}>JOB TITLE</CardTitle>
                             <CardText className='job-title-card'>
                                 <h4 id="jobTitle" style={{ display: "inline-block" }} contentEditable="true">{this.state.jobTitle}</h4>
-                                
-                                <Button value="jobTitle"
-                                    data-tip data-for="registerTip" onClick={this.editAccount}><i id="jobTitle" className="fa fa-save" aria-hidden="true" /></Button>
+                                {/* <hr/> */}
+                                <Button value="jobTitle" 
+                                onClick={this.editAccount}><i className="fa fa-save" aria-hidden="true" /></Button>
                             </CardText>
 
 
@@ -119,12 +120,14 @@ class MyAccount extends Component {
                         <Card shadow={5} style={{ width: '30vw', height: '400px', margin: 'auto' }} className="matches-list3">
                             <CardTitle className='bio-header' style={{ color: '#ffbd4a', height: '100px', position: 'relative', backgroundPosition: 'center', backgroundSize: 'cover' }}>LOCATION</CardTitle>
                             <CardText>
-                                <h2 id="city" style={{ display: "inline-block" }} contentEditable="true">{this.state.city}</h2><Button value="city"
-                                    data-tip data-for="registerTip" onClick={this.editAccount}><i id="city" className="fa fa-save" aria-hidden="true" /></Button><br />
-                                <h2 id="state" style={{ display: "inline-block" }} contentEditable="true">{this.state.state}</h2><Button value="state"
-                                    data-tip data-for="registerTip" onClick={this.editAccount}><i id="state" className="fa fa-save" aria-hidden="true" /></Button><br />
+                                <h2 id="city" style={{ display: "inline-block" }} contentEditable="true">{this.state.city}</h2><Button value="city" 
+                                onClick={this.editAccount}><i className="fa fa-save" aria-hidden="true" /></Button><br />
+                                <h2 id="state" style={{ display: "inline-block" }} contentEditable="true">{this.state.state}</h2><Button value="state" 
+                                onClick={this.editAccount}><i className="fa fa-save" aria-hidden="true" /></Button><br />
 
                             </CardText>
+                            
+                            {/* <Button value="city" onClick={this.editAccount}>Save</Button> */}
 
                         </Card>
                         <br />
@@ -133,9 +136,9 @@ class MyAccount extends Component {
                             <CardTitle className='bio-header' style={{ color: '#2eb2ff', height: '100px', position: 'relative', backgroundPosition: 'center', backgroundSize: 'cover' }}>EDUCATION</CardTitle>
                             <CardText>
                                 <h4 id="education" style={{ display: 'inline-block' }} contentEditable="true">{this.state.education}</h4>
-                                
-                                <Button value="education"
-                                    data-tip data-for="registerTip" onClick={this.editAccount}><i id="education" className="fa fa-save" aria-hidden="true" /></Button>
+                                {/* <hr/> */}
+                                <Button value="education" 
+                                onClick={this.editAccount}><i className="fa fa-save" aria-hidden="true" /></Button>
                             </CardText>
 
 
